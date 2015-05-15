@@ -3,12 +3,33 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>PAR!</h1>
 
-  {{> hello}}
+  {{> reg__user}}
+
+  {{> reg__course}}
+
+  {{> list__courses}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="reg__user">
+  <form class="user--add">
+    <input name="user" placeholder="user name">
+    <button >>></button>
+  </form>
+</template>
+
+<template name="reg__course">
+  <form class="course--add">
+    <input name="course" placeholder="course name">
+  </form>
+</template>
+
+<template name="list__courses">
+  <ul>
+    {{#each courses}}
+      <li>{{title}}</li>
+      <button class="course--del">X</button>
+    {{/each}}
+  </ul>
 </template>
